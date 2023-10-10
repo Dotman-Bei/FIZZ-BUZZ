@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.css">
+    <link rel="shortcut icon" href="background img.png" type="image/x-icon">
+    <style>
+        
+        body{
+            background-image: url(background\ img.png);
+            background-size: cover;
+        }
+        #display{       
+            height: 50px;
+            padding: 10px;
+            background-color: whitesmoke;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            color: black;
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        h2{
+            position: relative;
+            top: 200px;
+            font-weight: bolder;
+            color: white;
+            text-decoration:line-through;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .main{
+            position: relative;
+            top: 70px;
+        }
+    
+    </style>
+</head>
+<body>
+
+    <h2 class="text-center d-sm-block fs-1">FIZZ BUZZ</h2>
+   <center class="container">
+        <div class="row px-2 pt-5 mt-5 d-sm-flex">
+                <div class="main p-4 mt-5 w-100 text-bg-dark border-primary rounded-4 border-5">
+                    <input type="number" placeholder="Number divisible by 3 & 5" id="numb" class="w-100 p-2 fw-bold mb-3">
+                    <button onclick="checkNumber()" class="fw-bold border-none w-50 h-25 bg-primary text-white">Check</button>
+                    <div id="display" class="fs-5 w-25"></div>
+                </div>
+        </div>
+   </center>
+
+   <script>
+
+        numb.addEventListener("keydown", function(key) {
+            if (key.code === "Enter") {
+                checkNumber()
+            }
+        })
+
+
+          function checkNumber(){
+          var num = numb.value
+
+            if(num === ""){
+                alert("Enter the correct value")
+            }else if (num%3==0 && num%5!==0){
+               display.innerHTML ="FIZZ"
+           }else if(num%5==0 && num%3!==0){
+              display.innerHTML ="BUZZ"
+           }else if(num%3 == 0 && num%5 == 0){
+              display.innerHTML ="FIZZ BUZZ"
+           }else if(num%3!==0 && num%5!==0){
+              alert("Enter a number that is divisible by 3 & 5")
+           }
+          }
+
+   </script>
+</body>
+</html>
